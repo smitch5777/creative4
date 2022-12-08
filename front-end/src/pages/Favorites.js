@@ -2,10 +2,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Duck from './components/Duck';
+import './css/favorites.css'
 
 const Favorites = () => {
     const [favoriteDucks, setDucks] = useState([]);
     const [error, setError] = useState("");
+    
 
     const fetchFavoriteDucks = async () => {
         try {
@@ -29,20 +31,23 @@ const Favorites = () => {
 
     useEffect(() => {
         fetchFavoriteDucks();
-    })
+    }, [])
 
     return (
-        <div className="Favorite Ducks">
-            <h1>Favorite Ducks</h1>
+        <div className="FavoriteDucks">
+            <h1 className="TitleText">Favorite Ducks</h1>
+            <div className='allFavoriteDucks'>
             {favoriteDucks.length > 0 ?
                 favoriteDucks?.map(duck => (
-                    <div>
+                    <div className='oneDuck'>
                         <Duck duck={duck} setError={setError} />
                         <button className="dislike" onClick={e => deleteFromFavorites(e, duck.id)}>Delete From Favorites</button>
                     </div>
                 )) :
                 <div> You haven't favorited any Ducks</div>
             }
+            {console.log('this is testing')}
+            </div>
         </div>
     )
 }
