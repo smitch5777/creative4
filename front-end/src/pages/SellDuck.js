@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./css/sellDuck.css"
 
 const SellDuck = () => {
     const [name, setName] = useState("");
@@ -19,7 +20,6 @@ const SellDuck = () => {
             is_favorite: false,
         }
         console.log('Submitted form with following data: ' + JSON.stringify(to_save));
-        alert('Submitting');
         await axios.post("/api/ducks", to_save);
         e.preventDefault();
     }
@@ -38,31 +38,32 @@ const SellDuck = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className="newDuckForm" onSubmit={handleSubmit}>
+            <label className='name'>
                 Name:
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
             </label>
             <br />
-            <label>
+            <label className='price'>
                 Price:
                 <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
             </label>
             <br />
-            <label>
+            <label className='descriptionLabel'>
                 Description:
                 <textarea value={description} onChange={(e) => setdescription(e.target.value)} />
             </label>
             <br />
-            <label>
+            <label className='location'>
                 Location:
                 <input type="text" value={location} onChange={(e) => setlocation(e.target.value)} />
             </label>
             <br />
-            <label>
+            <label className='imgNum'>
                 Duck Image # (This is from the random duck database):
                 <input type="text" value={imgNum} onChange={(e) => setImgNum(e.target.value)} />
             </label>
+            <br/>
             <input type="submit" value="Submit" />
         </form>
     )
