@@ -29,12 +29,10 @@ const Home = () => {
             <div className='description'>Here you can look through the different ducks we have for sale, put one of your own up for sale, or just browse around. Have fun!!!</div>
             <br />
             <div className="RandomDucks">
-                <div className='flex'>
-                    <h2>Random Ducks: </h2>
-                    <button className="random_duck_button" onClick={newRandomDuck}>New Duck</button>
-                </div>
+                    <h2 className="RandomDuckText">Random Duck: </h2>
                 <img className="DuckImg" src={duckImg} />
             </div>
+            <button className="random_duck_button" onClick={newRandomDuck}>New Duck</button>
         </div>
     )
 
