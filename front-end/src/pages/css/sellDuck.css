@@ -1,0 +1,42 @@
+.name {}
+
+.price {}
+
+.description {}
+
+.location {}
+
+.imgNum {}
+
+input,
+textarea {
+  padding: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 300px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  margin-top: 15px;
+  color: #B4886B;
+  font-weight: bold;
+  width: 300px;
+  margin-left: 30px;
+  display: block;
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+.newDuckForm {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+}
