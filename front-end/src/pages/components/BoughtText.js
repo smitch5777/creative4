@@ -1,5 +1,3 @@
-import '../css/boughtText.css';
-
 const BoughtText = ({ is_bought, setError }) => {
     if (is_bought) {
         return (
