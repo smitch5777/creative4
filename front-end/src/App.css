@@ -32,7 +32,22 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.bought_text {
+  color: red;
+  font-weight: bold;
+}
+
+.available_text {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+.DuckImg {
+  max-width: 50%;
 }
