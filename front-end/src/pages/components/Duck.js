@@ -6,17 +6,15 @@ import '../css/duck.css';
 
 const Duck = ({ duck, setError }) => {
   return (
-    <div>
-      <h2>{duck.name}</h2>
+    <div className="fullDuck">
+      <h2 className="duckName">{duck.name}</h2>
       <BoughtText is_bought={duck.is_bought} />
-      <img src={duck.img_url}>{duck.name}</img>
-      <h4>Found in: {duck.location}</h4>
+      <img className="duckImg" src={duck.img_url} alt={duck.name} />
+      <h4 className="location" >Location: {duck.location}</h4>
       <br />
-      <h4>The Price for {duck.name} is:</h4>
+      <h4 className="price" >Price:</h4>
       <Price price={duck.price} />
-      <br />
-      <h4>More Information:</h4>
-      <h5>{duck.description}</h5>
+      <h5 className="duckDescription" >{duck.description}</h5>
     </div>
   )
 }
