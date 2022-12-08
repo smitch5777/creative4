@@ -38,16 +38,6 @@
   }
 }
 
-.bought_text {
-  color: red;
-  font-weight: bold;
-}
-
-.available_text {
-  color: #61dafb;
-  font-weight: bold;
-}
-
 .DuckImg {
   max-width: 50%;
 }
