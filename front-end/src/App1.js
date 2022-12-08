@@ -128,19 +128,19 @@ function App() {
         setDisabled(previousDisabled(e))
     }
 
-    const addToFavorites = async (e) => {
-        if (favoriteDucks.find((duck) => { return duck.img_url = duckImg })) {
+    // const addToFavorites = async (e) => {
+    //     if (favoriteDucks.find((duck) => { return duck.img_url = duckImg })) {
 
-        }
-    }
+    //     }
+    // }
 
-    const alreadyInFavorites = async (duck) => {
-        if (favoriteDucks.find((duck) => { return duck.img_url = duckImg })) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // const alreadyInFavorites = async (duck) => {
+    //     if (favoriteDucks.find((duck) => { return duck.img_url = duckImg })) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     const addNewDuck = async (e, id) => {
 
@@ -171,7 +171,7 @@ function App() {
                 <img className="DuckImg" src={duckImg} />
                 <br />
                 <button className="random_duck_button" onClick={newRandomDuck}>New Duck</button>
-                <button className="like" onClick={addToFavorites}>Add to Favorites</button>
+                {/* <button className="like" onClick={addToFavorites}>Add to Favorites</button> */}
                 {(previousDisabled) ? <div><button className="previous" onClick={previousDuck}>Previous Duck</button></div> : <div></div>
                 }
             </div>
@@ -190,14 +190,14 @@ function App() {
         </div>
         <input type="submit" value="Submit" />
       </form> */}
-            <h1>Favorite Ducks</h1>
+            {/* <h1>Favorite Ducks</h1>
             {
                 favoriteDucks?.map(duck => (
                     <div>
                         <SimpleDuck duck={duck} setError={setError} />
                     </div>
                 ))
-            }
+            } */}
             {/* <h1>Cart</h1>
       {
         cartItems?.map(cartItem => {
