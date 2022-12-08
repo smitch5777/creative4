@@ -20,7 +20,7 @@ const duckSchema = new mongoose.Schema({
   price: String,
   description: String,
   location: String,
-  img: Buffer,
+  img_url: String,
   is_bought: Boolean,
   is_favorite: Boolean
 });
@@ -43,6 +43,22 @@ app.get('/api/favorites', async (req, res) => {
     });
     console.log('duck' + favorites);
     res.send(favorites);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.put('/api/favorites/:id', async (req, res) => {
+  try {
+    const duckQuery = await Duck.find({
+      _id: req.params.id
+    });
+    const duck = duckQuery[0];
+    duck.is_favorite = true;
+    console.log('duck: ' + duck);
+    await duck.save();
+    res.send(duck);
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
@@ -77,14 +93,14 @@ app.post('/api/ducks', async (req, res) => {
   const duck = new Duck({
     name: req.body.name,
     price: req.body.price,
-    img: req.body.img,
+    img_url: req.body.img,
     description: req.body.description,
     location: req.body.location,
     is_bought: req.body.is_bought ? true : false,
     is_favorite: req.body.is_favorite ? true : false
   });
   try {
-    await Duck.save();
+    await duck.save();
     console.log('duck' + duck);
     res.send(duck);
   } catch (error) {
